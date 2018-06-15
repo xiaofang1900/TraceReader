@@ -167,11 +167,11 @@ public class Trace {
 			m.setMethodSig(params[3]);
 			if(params.length==6){
 				m.setSource(params[4]+" "+params[5]);
-			}else{
+			}else if (params.length == 5){
 				m.setSource(params[4]);
 			}
 			offset++;
-			fmFile.methods.put(m.getMethod(), m);
+			fmFile.methods.put(Long.valueOf(m.getMethod()), m);
 		}
 	}
 	private void divideBytes(byte[] bytes){
